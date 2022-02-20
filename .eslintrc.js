@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+    'vue/setup-compiler-macros': true,
   },
   extends: [
     'eslint:recommended',
@@ -11,7 +12,7 @@ module.exports = {
     'plugin:nuxt/recommended',
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: '2021',
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },

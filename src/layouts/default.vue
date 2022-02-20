@@ -1,7 +1,11 @@
 <template>
-  <div>
+  <div class="default-layout">
     <slot />
   </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.default-layout {
+  padding: 0 20px;
+}
+</style>

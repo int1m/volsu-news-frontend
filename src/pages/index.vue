@@ -1,7 +1,10 @@
 <template>
-  <div>
+  <div class="news">
+    <h2 class="news-header">
+      Список новостей
+    </h2>
     <div v-for="(news, index) in newsList" :key="index">
-      {{ news.author }}
+      <News :news="news" />
     </div>
   </div>
 </template>
@@ -10,6 +13,7 @@
 import { useCounterStore } from '@/stores/counter';
 import { computed, onMounted } from 'vue';
 import { NewsList } from '~/services/news/news';
+import News from '@/components/pages/news/News';
 
 const counterStore = useCounterStore();
 
@@ -20,6 +24,4 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

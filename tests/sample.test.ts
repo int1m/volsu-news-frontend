@@ -1,7 +1,17 @@
 import { expect, test } from 'vitest';
 
-test('Math.sqrt()', () => {
-  expect(Math.sqrt(4)).toBe(2)
-  expect(Math.sqrt(144)).toBe(12)
-  expect(Math.sqrt(2)).toBe(Math.SQRT2)
+
+const cropNumber = (number: number): string => {
+  if (number >= 1000) {
+    number /= 1000;
+    return (number % 1 > 0.1 ? number.toFixed(1).toString() : Math.round(number).toString()) + 'K';
+  }
+  return number.toString();
+};
+
+test('cropNumber', () => {
+  expect(cropNumber(341)).toBe('341');
+  expect(cropNumber(999)).toBe('999');
+  expect(cropNumber(1000)).toBe('1K');
+  expect(cropNumber(1120)).toBe('1.1K');
 });

@@ -1,4 +1,4 @@
-import { useState } from '#app';
+import { useState } from 'nuxt3/app';
 import { defineStore } from 'pinia';
 import { NewsService, NewsList } from '~/services/news/news';
 

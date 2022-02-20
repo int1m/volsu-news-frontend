@@ -1,23 +1,37 @@
 {
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "target": "es2015",
+    "target": "esnext",
     "module": "esnext",
-    "types": [
-      "vitest/globals",
-      "@pinia/nuxt",
-    ],
     "strict": true,
+    "jsx": "preserve",
     "importHelpers": true,
+    "moduleResolution": "node",
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "types": [
+      "vitest/globals",
+      "@pinia/nuxt",
+      "node",
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "~/*": [
+        "src/*"
+      ]
+    },
   },
   "include": [
-    "src",
-    "tests",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
   ],
   "exclude": [
     "node_modules",
