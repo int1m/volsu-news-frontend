@@ -1,21 +1,19 @@
-# Nuxt 3 Minimal Starter
-
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+# Volsu news frontend
 
 ## Setup
 
 Make sure to install the dependencies
 
 ```bash
-yarn install
+npm install
 ```
 
 ## Development
 
-Start the development server on http://localhost:3000
+Start the development server on http://localhost:8080
 
 ```bash
-yarn dev
+npm dev
 ```
 
 ## Production
@@ -23,7 +21,5 @@ yarn dev
 Build the application for production:
 
 ```bash
-yarn build
+npm build
 ```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
