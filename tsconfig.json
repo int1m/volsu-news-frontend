@@ -15,23 +15,14 @@
     "types": [
       "vitest/globals",
       "@pinia/nuxt",
+      "@types/jest",
       "node",
     ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "~/*": [
-        "src/*"
-      ]
-    },
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

@@ -20,10 +20,10 @@ export const generateNews = (): News => {
         variants: faker.random.arrayElements(['1', '2', '3', '4'], 2),
       },
       feedback: {
-        likes: faker.datatype.number({ min: 10, max: 40 }),
-        views: faker.datatype.number({ min: 100, max: 200 }),
+        likes: faker.datatype.number({ min: 100, max: 4000 }),
+        views: faker.datatype.number({ min: 200, max: 10000 }),
         comments: {
-          text: faker.random.words(20),
+          text: faker.random.words(10),
           likes: faker.datatype.number({ min: 10, max: 40 }),
         },
       },

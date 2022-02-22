@@ -1,3 +1,5 @@
+import { useFetch } from '#app';
+
 type NewsStatus = 'draft' | 'pendingVerification' | 'pendingPublicate' | 'publicated' | 'deleted';
 
 interface Comment {
@@ -42,7 +44,7 @@ export type NewsList = Array<News>;
 
 export class NewsService {
   getNewsList = async (): Promise<NewsList> => {
-    const response = await fetch('/api/news/');
-    return await response.json();
+    const { data } = await useFetch<NewsList>('/api/news');
+    return data.value;
   };
 }
