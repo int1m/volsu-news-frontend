@@ -13,7 +13,6 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "types": [
-      "vitest/globals",
       "@pinia/nuxt",
       "@types/jest",
       "node",

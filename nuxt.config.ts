@@ -1,7 +1,6 @@
 import { defineNuxtConfig } from 'nuxt3';
 import Components from 'unplugin-vue-components/vite';
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
-import { resolve } from 'pathe';
 
 export default defineNuxtConfig({
   srcDir: 'src/',

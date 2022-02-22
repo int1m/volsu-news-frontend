@@ -11,7 +11,7 @@
           {{ newsValue.author }}
         </div>
         <div class="news-date-publication">
-          вчера в 22:30
+          {{ dateNewsFormatting(new Date(newsValue.publicationDate)) }}
         </div>
       </div>
     </div>
@@ -46,6 +46,7 @@
 import { PropType, computed } from 'vue';
 import { News } from '@/services/news/news';
 import { cropNumber } from '@/helpers/utilities';
+import { dateNewsFormatting } from '@/helpers/dateHelper';
 
 const props = defineProps({
   news: {

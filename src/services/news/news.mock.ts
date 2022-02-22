@@ -6,11 +6,16 @@ export const generateNews = (): News => {
     author: faker.name.findName(),
     title: faker.random.words(5),
     text: faker.random.words(100),
-    publicationDate: faker.date.between('2020-01-01T00:00:00.000Z', '2021-01-01T00:00:00.000Z'),
+    publicationDate: faker.date.between('2021-12-29T00:00:00.000Z', '2022-02-21T17:00:00.000Z').toISOString(),
+    eventDates: faker.random.arrayElements([
+      faker.date.between('2021-12-29T00:00:00.000Z', '2022-02-21T17:00:00.000Z').toISOString(),
+      faker.date.between('2021-12-29T00:00:00.000Z', '2022-02-21T17:00:00.000Z').toISOString(),
+      faker.date.between('2021-12-29T00:00:00.000Z', '2022-02-21T17:00:00.000Z').toISOString()],
+    1),
     filterTags: faker.random.arrayElements(['dev', 'imit', 'volsu'], 1),
     auditoryTags: faker.random.arrayElements(['All', 'imit'], 1),
     techInfo: {
-      createDate: faker.date.between('2020-01-01T00:00:00.000Z', '2021-01-01T00:00:00.000Z'),
+      createDate: faker.date.between('2020-01-01T00:00:00.000Z', '2022-01-01T00:00:00.000Z').toISOString(),
       type: 'type',
       status: 'publicated',
     },
