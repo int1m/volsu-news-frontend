@@ -8,7 +8,7 @@ export const useCounterStore = defineStore('counter', () => {
   // State
   const newsList = useState<NewsList>('newsList', () => []);
 
-  // Mutation
+  // Actions
   const getNewsList = async () => {
     newsList.value = await newsService.getNewsList();
   };

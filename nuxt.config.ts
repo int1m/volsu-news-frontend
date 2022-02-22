@@ -1,6 +1,7 @@
 import { defineNuxtConfig } from 'nuxt3';
 import Components from 'unplugin-vue-components/vite';
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
+import { resolve } from 'pathe';
 
 export default defineNuxtConfig({
   srcDir: 'src/',
@@ -16,9 +17,6 @@ export default defineNuxtConfig({
     // @ts-expect-error: Missing ssr key
     ssr: {
       noExternal: ['moment', 'compute-scroll-into-view', 'ant-design-vue'],
-    },
-    test: {
-      globals: true,
     },
   },
   buildModules: [
