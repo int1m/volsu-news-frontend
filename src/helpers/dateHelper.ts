@@ -36,5 +36,5 @@ export const dateNewsFormatting = (date: Date): string => {
     return `${dateValue.format('DD')} ${dateValueMount} в ${dateValue.format('HH:mm')}`;
   }
 
-  return `${dateValue.format('DD')} ${dateValueMount} ${dateValue.format('YYYY')}`
-}
+  return `${dateValue.format('DD')} ${dateValueMount} ${dateValue.format('YYYY')}`;
+};

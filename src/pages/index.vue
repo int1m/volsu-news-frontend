@@ -2,10 +2,8 @@
 import { defineNuxtRouteMiddleware, definePageMeta, navigateTo } from '#imports';
 
 definePageMeta({
-  middleware: [defineNuxtRouteMiddleware(() => {
-    return navigateTo('/news');
-  })],
-})
+  middleware: [defineNuxtRouteMiddleware(() => navigateTo('/news'))],
+});
 </script>
 
 <style lang="scss" scoped></style>

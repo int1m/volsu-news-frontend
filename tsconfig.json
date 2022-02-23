@@ -16,12 +16,14 @@
       "@pinia/nuxt",
       "@types/jest",
       "node",
-    ],
+    ]
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
+    "./*.ts",
+    "./*.js",
   ],
   "exclude": [
     "node_modules",

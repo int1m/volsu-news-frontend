@@ -32,13 +32,28 @@ export default defineNuxtConfig({
   meta: {
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' },
-      { name: 'theme-color', content: '#ffffff' },
-      { name: 'color-scheme', content: '#light' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
+      },
+      {
+        name: 'theme-color',
+        content: '#ffffff',
+      },
+      {
+        name: 'color-scheme',
+        content: '#light',
+      },
     ],
     link: [
-      { rel: 'icon', href: '/img/icon32.svg' },
-      { rel: 'manifest', href: '/site.webmanifest' },
+      {
+        rel: 'icon',
+        href: '/img/icon32.svg',
+      },
+      {
+        rel: 'manifest',
+        href: '/site.webmanifest',
+      },
     ],
   },
 });

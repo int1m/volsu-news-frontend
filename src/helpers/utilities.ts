@@ -1,7 +1,8 @@
 export const cropNumber = (number: number): string => {
-  if (number >= 1000) {
-    number /= 1000;
-    return (number % 1 > 0.1 ? number.toFixed(1).toString() : Math.round(number).toString()) + 'K';
+  let numberValue = number;
+  if (numberValue >= 1000) {
+    numberValue /= 1000;
+    return `${numberValue % 1 > 0.1 ? numberValue.toFixed(1).toString() : Math.round(numberValue).toString()}K`;
   }
-  return number.toString();
+  return numberValue.toString();
 };

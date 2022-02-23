@@ -1,17 +1,17 @@
-import { dateNewsFormatting } from '~/helpers/dateHelper';
-
 import dayjs from 'dayjs';
 import local from 'dayjs/locale/ru';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import { dateNewsFormatting } from '~/helpers/dateHelper';
+
 dayjs.locale(local);
-dayjs.extend(duration)
+dayjs.extend(duration);
 dayjs.extend(relativeTime);
 
 test('dateNewsFormatting', () => {
   const testDate = dayjs();
   const currentDay = testDate.hour(0).minute(0).second(0).millisecond(0);
-  const yesterdayDay = currentDay.subtract(1, 'day')
+  const yesterdayDay = currentDay.subtract(1, 'day');
   const currentYear = currentDay.month(0).date(1);
 
   expect(dateNewsFormatting(testDate.toDate())).toBe('только что');

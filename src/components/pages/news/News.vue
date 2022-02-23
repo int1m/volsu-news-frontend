@@ -43,7 +43,8 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType, computed } from 'vue';
+import { PropType } from 'nuxt3/dist/app/compat/capi';
+import { computed } from '#imports';
 import { News } from '@/services/news/news';
 import { cropNumber } from '@/helpers/utilities';
 import { dateNewsFormatting } from '@/helpers/dateHelper';

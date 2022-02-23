@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts" setup>
+import { computed, onMounted } from '#imports';
 import { useCounterStore } from '@/stores/news';
-import { computed, onMounted } from 'vue';
 import { NewsList } from '@/services/news/news';
 import News from '@/components/pages/news/News';
 
@@ -21,8 +21,8 @@ const counterStore = useCounterStore();
 
 const newsList = computed<NewsList>(() => counterStore.newsList);
 
-onMounted(() => {
-  counterStore.getNewsList();
+onMounted(async () => {
+  await counterStore.getNewsList();
 });
 </script>
 
