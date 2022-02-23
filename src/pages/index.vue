@@ -1,7 +1,3 @@
-<template>
-  <template></template>
-</template>
-
 <script lang="ts" setup>
 import { defineNuxtRouteMiddleware, definePageMeta, navigateTo } from '#imports';
 
