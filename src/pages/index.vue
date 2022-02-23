@@ -3,10 +3,13 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute, useRouter } from '#imports';
+import { defineNuxtRouteMiddleware, definePageMeta, navigateTo } from '#imports';
 
-const route = useRoute();
-const router = useRouter();
+definePageMeta({
+  middleware: [defineNuxtRouteMiddleware(() => {
+    return navigateTo('/news');
+  })],
+})
 </script>
 
 <style lang="scss" scoped></style>
