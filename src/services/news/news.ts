@@ -35,7 +35,7 @@ export interface News {
     feedback: {
       likes: number,
       views: number,
-      comments: Comment,
+      comments: Array<string>,
     },
   }
 }
