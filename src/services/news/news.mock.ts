@@ -4,7 +4,7 @@ import { News } from '@/services/news/news';
 export const generateNews = (): News => ({
   author: faker.name.findName(),
   title: faker.random.words(5),
-  text: faker.random.words(100),
+  text: faker.random.words(60),
   publicationDate: faker.date.between('2021-12-29T00:00:00.000Z', '2022-02-21T17:00:00.000Z').toISOString(),
   eventDates: faker.random.arrayElements(
     [
@@ -28,10 +28,7 @@ export const generateNews = (): News => ({
     feedback: {
       likes: faker.datatype.number({ min: 100, max: 4000 }),
       views: faker.datatype.number({ min: 200, max: 10000 }),
-      comments: {
-        text: faker.random.words(10),
-        likes: faker.datatype.number({ min: 10, max: 40 }),
-      },
+      comments: faker.random.arrayElements(['123', '13345', '4155', '1155', '1415', '1414'], 5),
     },
   },
 });
