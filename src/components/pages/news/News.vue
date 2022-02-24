@@ -1,18 +1,36 @@
 <template>
   <div class="news">
     <div class="news-header">
-      <img
-        class="news-img"
-        src="@/assets/icons/news-img-empty.svg"
-        alt="news-img-empty"
-      >
-      <div class="news-info">
-        <div class="news-author">
-          {{ newsValue.author }}
+      <div class="news-header-left">
+        <img
+          class="news-img"
+          src="@/assets/icons/news-img-empty.svg"
+          alt="news-img-empty"
+        >
+        <div class="news-info">
+          <div class="news-author">
+            {{ newsValue.author }}
+          </div>
+          <div class="news-date-publication">
+            {{ dateNewsFormatting(new Date(newsValue.publicationDate)) }}
+          </div>
         </div>
-        <div class="news-date-publication">
-          {{ dateNewsFormatting(new Date(newsValue.publicationDate)) }}
-        </div>
+      </div>
+      <div class="news-header-right">
+        <a-popover
+          class="news-header-more-action"
+          trigger="click"
+          placement="bottomLeft"
+        >
+          <template #title />
+          <template #content>
+            <div class="more-buttons-container">
+              <div>Редактировать</div>
+              <div>Удалить</div>
+            </div>
+          </template>
+          <img src="@/assets/icons/more.svg" alt="more">
+        </a-popover>
       </div>
     </div>
     <div class="news-content">
@@ -31,7 +49,7 @@
         </div>
         <div class="news-feedback news-feedback-background">
           <img src="@/assets/icons/comment.svg" alt="comment">
-          <span>{{ cropNumber(newsValue.interaction.feedback.comments.text.length) }}</span>
+          <span>{{ cropNumber(newsValue.interaction.feedback.comments.length) }}</span>
         </div>
       </div>
       <div class="news-feedback">
@@ -59,6 +77,34 @@ const props = defineProps({
 const newsValue = computed<News>(() => props.news);
 </script>
 
+<style lang="scss">
+.ant-popover {
+  margin-bottom: -10px;
+}
+
+.ant-popover-content {
+  margin-top: -10px;
+}
+
+.ant-popover-inner {
+  border-radius: 10px;
+}
+
+.ant-popover-arrow {
+  display: none;
+}
+
+.ant-popover-title {
+  display: none;
+}
+
+.more-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+</style>
+
 <style lang="scss" scoped>
 .news {
   background-color: #ffffff;
@@ -71,8 +117,14 @@ const newsValue = computed<News>(() => props.news);
 
   .news-header {
     display: flex;
-    gap: 12px;
+    justify-content: space-between;
     align-items: center;
+
+    .news-header-left {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
   }
 
   .news-content {
@@ -96,7 +148,7 @@ const newsValue = computed<News>(() => props.news);
       gap: 8px;
 
       .news-feedback-background {
-        background-color: #E4E7EA;
+        background-color: #f2f3f5;
         border-radius: 14px;
         padding: 0 12px;
       }
@@ -105,6 +157,8 @@ const newsValue = computed<News>(() => props.news);
     .news-feedback {
       display: flex;
       align-items: center;
+      color: #99a2ad;
+      font-weight: 500;
       gap: 6px;
       height: 28px;
     }

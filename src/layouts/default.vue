@@ -6,6 +6,7 @@
 
 <style lang="scss" scoped>
 .default-layout {
-  padding: 0 20px;
+  height: 100%;
+  width: 100%;
 }
 </style>

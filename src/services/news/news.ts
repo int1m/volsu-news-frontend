@@ -11,16 +11,16 @@ export interface News {
   author: string,
   title: string,
   text: string,
-  publicationDate: string,
+  publicationDate?: string,
   eventDates?: Array<string>,
-  filterTags: Array<string>,
-  auditoryTags: Array<string>,
-  techInfo: {
+  filterTags?: Array<string>,
+  auditoryTags?: Array<string>,
+  techInfo?: {
     createDate: string,
     type: string,
     status: NewsStatus,
   },
-  interaction: {
+  interaction?: {
     button?: {
       type: string,
       title: string,
@@ -42,9 +42,22 @@ export interface News {
 
 export type NewsList = Array<News>;
 
+type NewsListGet = {
+  news: NewsList,
+  count: number,
+};
+
 export class NewsService {
   getNewsList = async (): Promise<NewsList> => {
-    const { data } = await useFetch<NewsList>('/api/news');
+    const { data } = await useFetch<NewsListGet>('http://localhost:3001/api/news/get');
+    return data.value.news.reverse();
+  };
+
+  createNews = async (news: News): Promise<News> => {
+    const { data } = await useFetch<News>('http://localhost:3001/api/news/create', {
+      method: 'POST',
+      body: news,
+    });
     return data.value;
   };
 }

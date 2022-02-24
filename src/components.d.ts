@@ -5,6 +5,10 @@
 declare module 'vue' {
   export interface GlobalComponents {
     AButton: typeof import('ant-design-vue/es')['Button']
+    ADivider: typeof import('ant-design-vue/es')['Divider']
+    AInput: typeof import('ant-design-vue/es')['Input']
+    APopover: typeof import('ant-design-vue/es')['Popover']
+    ATextarea: typeof import('ant-design-vue/es')['Textarea']
   }
 }
 
